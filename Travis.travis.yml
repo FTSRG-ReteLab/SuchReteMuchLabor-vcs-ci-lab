@@ -2,8 +2,6 @@ language: java
 install: true
 
 os: linux
-dist: trusty
-jdk: oraclejdk8
+dist: xenial
+jdk: openjdk8
 
-script:
-  - ./gradlew build --scan -slanguage: java
