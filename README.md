@@ -1,6 +1,9 @@
-###Extra notes
+### Extra notes
+
  **this is the new text**
+
 *this is a other text*
+
 # Train Speed Controller
 
 This is a sample application for the verification laboratory.
