@@ -8,6 +8,7 @@ import hu.bme.mit.train.interfaces.TrainUser;
 import hu.bme.mit.train.sensor.TrainSensorImpl;
 import hu.bme.mit.train.user.TrainUserImpl;
 import hu.bme.mit.tachograph.TachographImpl;
+import org.junit.Test;
 
 import java.time.LocalDateTime;
 
@@ -34,5 +35,11 @@ public class TrainSystem {
 	{
 		tachograph.Tachographadd(LocalDateTime.now(),controller.getReferenceSpeed(),user.getJoystickPosition());
 	}
+	public TrainTachograph getTachograph()
+	{
+		return tachograph;
+	}
+
+
 
 }

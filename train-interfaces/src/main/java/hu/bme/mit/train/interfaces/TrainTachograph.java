@@ -8,4 +8,6 @@ import java.time.LocalDateTime;
 public interface TrainTachograph {
     
     public void Tachographadd(LocalDateTime time, Integer refspeed, Integer joystick);
+
+    public Table<LocalDateTime,Integer,Integer> getTable();
 }

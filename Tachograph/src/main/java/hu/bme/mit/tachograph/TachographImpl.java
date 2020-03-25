@@ -1,6 +1,5 @@
 package hu.bme.mit.tachograph;
 
-import hu.bme.mit.train.interfaces.TrainSensor;
 import com.google.common.collect.Table;
 import com.google.common.collect.HashBasedTable;
 import hu.bme.mit.train.interfaces.TrainTachograph;
@@ -15,5 +14,11 @@ public class TachographImpl implements TrainTachograph {
     {
         table.put(time,refspeed,joystick);
     }
+
+    public Table<LocalDateTime,Integer,Integer> getTable()
+    {
+        return table;
+    }
+
 
 }

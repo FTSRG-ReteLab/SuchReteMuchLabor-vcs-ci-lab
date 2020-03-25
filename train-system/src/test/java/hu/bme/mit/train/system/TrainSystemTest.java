@@ -11,13 +11,14 @@ import hu.bme.mit.train.system.TrainSystem;
 
 public class TrainSystemTest {
 
+	TrainSystem system;
 	TrainController controller;
 	TrainSensor sensor;
 	TrainUser user;
 	
 	@Before
 	public void before() {
-		TrainSystem system = new TrainSystem();
+		system = new TrainSystem();
 		controller = system.getController();
 		sensor = system.getSensor();
 		user = system.getUser();
@@ -48,6 +49,12 @@ public class TrainSystemTest {
 		user.overrideJoystickPosition(-5);
 		controller.followSpeed();
 		Assert.assertEquals(0, controller.getReferenceSpeed());
+	}
+
+	@Test
+	public void testLog() {
+		system.log();
+		Assert.assertTrue(0<system.getTachograph().getTable().size());
 	}
 
 	
