@@ -59,8 +59,6 @@ public class TrainSystemTest {
 	@Test
 	public void testRun()
 	{
-		Assert.assertEquals(60, sensor.getSpeedLimit());
-
 		user.overrideJoystickPosition(30);
 		Assert.assertEquals(30,user.getJoystickPosition());
 
