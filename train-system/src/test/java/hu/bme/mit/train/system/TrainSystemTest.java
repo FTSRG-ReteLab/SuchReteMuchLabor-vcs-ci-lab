@@ -23,7 +23,7 @@ public class TrainSystemTest {
 		sensor = system.getSensor();
 		user = system.getUser();
 
-		sensor.overrideSpeedLimit(50);
+		sensor.overrideSpeedLimit(60);
 	}
 	
 	@Test
@@ -59,7 +59,6 @@ public class TrainSystemTest {
 	@Test
 	public void testRun()
 	{
-		sensor.overrideSpeedLimit(60);
 		Assert.assertEquals(60, sensor.getSpeedLimit());
 
 		user.overrideJoystickPosition(30);
