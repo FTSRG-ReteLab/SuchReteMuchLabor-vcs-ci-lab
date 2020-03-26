@@ -5,5 +5,7 @@ public interface TrainSensor {
 	int getSpeedLimit();
 
 	void overrideSpeedLimit(int speedLimit);
+	public TrainController getController();
+	public TrainUser getUser();
 
 }
