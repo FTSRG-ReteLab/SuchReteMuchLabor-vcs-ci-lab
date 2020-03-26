@@ -56,6 +56,28 @@ public class TrainSystemTest {
 		system.log();
 		Assert.assertTrue(0<system.getTachograph().getTable().size());
 	}
+	@Test
+	public void testRun()
+	{
+		sensor.overrideSpeedLimit(60);
+		Assert.assertEquals(60, sensor.getSpeedLimit());
+
+		user.overrideJoystickPosition(30);
+		Assert.assertEquals(30,user.getJoystickPosition());
+
+		for(int iteration=0;iteration<7;iteration++)
+		{
+			controller.followSpeed();
+			if(iteration==0) Assert.assertEquals(30, controller.getReferenceSpeed());
+			if(iteration==1) Assert.assertEquals(60, controller.getReferenceSpeed());
+			if(iteration==2) { Assert.assertEquals(60, controller.getReferenceSpeed()); user.overrideJoystickPosition(0); }
+			if(iteration==3) Assert.assertEquals(60, controller.getReferenceSpeed());
+			if(iteration==4) { Assert.assertEquals(60, controller.getReferenceSpeed()); user.overrideJoystickPosition(-30);}
+			if(iteration==5) { Assert.assertEquals(30, controller.getReferenceSpeed()); user.overrideJoystickPosition(0);}
+			if(iteration==6)  Assert.assertEquals(30, controller.getReferenceSpeed());
+		}
+
+	}
 
 	
 }
