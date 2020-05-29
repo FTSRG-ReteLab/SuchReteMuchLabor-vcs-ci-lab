@@ -1,6 +1,10 @@
 subprojects {
   apply plugin: 'java'
+  
+  plugins { id "org.sonarqube" version "2.6.2" apply false }
 
+  systemProp.sonar.host.url=http://localhost:9000
+  
   repositories {
     jcenter()
   }
