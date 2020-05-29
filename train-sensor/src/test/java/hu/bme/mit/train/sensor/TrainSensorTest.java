@@ -26,13 +26,13 @@ public class TrainSensorTest {
     }
 
     @Test
-    public void CheckAlarmStateAbsMarginNormal() {
+    public void CheckNormal() {
         trainSensorImpl.overrideSpeedLimit(5);
         verify(trainUser, times(1)).setAlarmState(false);
     }
 
     @Test
-    public void CheckAlarmStateAbsMarginMax() {
+    public void CheckMax() {
         trainSensorImpl.overrideSpeedLimit(5000);
         verify(trainUser, times(1)).setAlarmState(true);
     }

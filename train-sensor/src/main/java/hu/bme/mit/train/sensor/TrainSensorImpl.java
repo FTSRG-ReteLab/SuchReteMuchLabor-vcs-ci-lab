@@ -28,12 +28,10 @@ public class TrainSensorImpl implements TrainSensor {
 	}
 
 	public void alarmCheck() {
-		if(this.speedLimit < 0 || this.speedLimit >500) {
+		if(this.speedLimit < 0 || this.speedLimit >500)
 			user.setAlarmState(true);
-		} else if ((this.speedLimit * 2) < controller.getReferenceSpeed()) {
+		if(this.speedLimit < controller.getReferenceSpeed()/2)
 			user.setAlarmState(true);
-		} else {
-			user.setAlarmState(false);
 		}
-	}
+
 }
