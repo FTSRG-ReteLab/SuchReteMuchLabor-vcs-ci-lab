@@ -2,7 +2,7 @@ package hu.bme.mit.train.controller;
 
 import org.junit.Test;
 
-class TrainControllerImplTest {
+public class TrainControllerImplTest {
     @Test
     public void WrongHotfix()
     {
